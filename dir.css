@@ -1,0 +1,56 @@
+.l1 {
+font-family: Tahoma;
+	font-size: 10pt;
+	font-weight:normal;
+	color: #666;
+	text-decoration: none;
+	}
+.l1 a:link{
+font-family: Tahoma;
+	font-size: 10pt;
+	font-weight:normal;
+	color: #666;
+	text-decoration: none;
+	}
+.l1 a:visited{
+font-family: Tahoma;
+	font-size: 10pt;
+	font-weight:normal;
+	color: #666;
+	text-decoration: none;
+	}
+.l1 a:hover{
+	font-family: Tahoma;
+	font-size: 10pt;
+	font-weight: normal;
+	color: #000;
+	text-decoration : underline; 
+	}
+.l2 {
+	font-family: Tahoma;
+	font-size: 10pt;
+	font-weight: normal;
+	color: #666;
+	text-decoration: none;
+	}
+.l2 a:link{
+	font-family: Tahoma;
+	font-size: 10pt;
+	font-weight: bold;
+	color: #666;
+	text-decoration: none;
+	}
+.l2 a:visited{
+	font-family: Tahoma;
+	font-size: 10pt;
+	font-weight: bold;
+	color: #666;
+	text-decoration: none;
+	}
+.l2 a:hover{
+	font-family: Tahoma;
+	font-size: 10pt;
+	font-weight: bold;
+	color: #000;
+	text-decoration : underline; 
+	}

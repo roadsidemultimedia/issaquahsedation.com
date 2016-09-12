@@ -1,0 +1,28 @@
+body {background-color:#000; margin:0;}
+a:link
+{
+	color : #F1D8B7;
+	text-decoration : none;
+}
+a:visited
+{
+	color : #F1D8B7;
+	text-decoration : none;
+}
+a:hover
+{
+	color : #DEA454;
+	text-decoration : none;
+}
+
+.scrlbar{scrollbar-arrow-color:#dea454; scrollbar-base-color:#000000; scrollbar-highlight-color:#ffffff; scrollbar-shadow-color:#999999}
+
+div.Section1
+	{page:Section1;}
+	
+li.MsoNormal
+	{mso-style-parent:"";
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	margin-left:0in; margin-right:0in; margin-top:0in}

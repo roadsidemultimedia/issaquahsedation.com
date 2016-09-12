@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="iso-8859-1"?>	
+<clientName>Issaquah Valley Dental Care</clientName>
+<address1>1660 NW GILMAN BOULEVARD, SUITE C-1 </address1>
+<address2>ISSAQUAH, WASHINGTON 98027</address2>
+<phone>425.654.4748</phone>
+<fax>425.392.1167</fax>
+<email>info@issaquahdental.com</email>
+<email2></email2>
+<officeHours>Monday-Thursday 9am-6pm</officeHours>
+<officeHours2>Friday and Saturday 9am-1pm by appointment only</officeHours2>
+<copyright>
+	<![CDATA[Copyright 2006, Issaquah Valley Dental Care, all rights reserved]]>
+</copyright>
+
+<!-- General Colors-->
+<headingColor>0x663366</headingColor>
+<bodyColor>0xD4D0C8</bodyColor>
+<linkColor>0xD4D0C8</linkColor>
+<activeLinkColor>0xffffff</activeLinkColor>
+
+<!--Footer Colors -->
+<footerTextColor>0x333333</footerTextColor>
+<footerBtnBorder>0xD4D0C8</footerBtnBorder>
+<footerBtnBgColor>0xD4D0C8</footerBtnBgColor>
+<footerBtnBgAlpha>90</footerBtnBgAlpha>
+<footerBtnBorderAlpha>70</footerBtnBorderAlpha>
+<footerGradient1>0xD4D0C8</footerGradient1>
+<footerGradient2>0xD4D0C8</footerGradient2><!--A solid color if gradient1's alpha = 0 -->
+<footerGradient1Alpha>100</footerGradient1Alpha>
+<footerGradient2Alpha>100</footerGradient2Alpha>
+<xmlFooterColor>true</xmlFooterColor><!--XML defined colors for the footer? -->
+<xmlColor>true</xmlColor> <!--GLOBAL XML defined colors for everything in the site-->
+
+<!--  Music Settings -->
+<musicEnabled>false</musicEnabled>
+<musicPath>media/music1.swf</musicPath> <!--  set this to the path and include the extension, either .swf or .mp3  -->
+<musicSwf>false</musicSwf> <!--  sets flash to load music from a swf  -->
+<musicMp3>false</musicMp3> <!--  sets flash to load music from an mp3-->

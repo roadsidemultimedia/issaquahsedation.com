@@ -1,0 +1,85 @@
+html {font-size:10pt;}
+
+body {height:100%; margin:0 0 0 225px; padding:0 10px; font-family:Verdana, Arial, Helvetica, sans-serif;
+	color:#fff; /* color of text in body */}
+
+/* Combined DIV Layout */
+body,#menu a,#menu a:hover,#menu a:active,#fcontainer a,#fcontainer a:hover,#norm,h1,h2,h3,h4,h5,b,a:link,a:visited,#validation a,#validation a:hover {background:#222;}
+
+#menu, #logo {
+	position:absolute;
+	width: 156px;}
+	
+#menu, #text {display:block}
+
+/* Menu Layout */
+#menu {top:141px; left:50px; height:199px; font-size:.75em;}
+#menu a {display:block; width:125px; height:25px; text-align:center; line-height:25px; margin-top:5px;
+	color:#fff; /* color of links before hover */
+	text-decoration:none; border:1px solid #fff; /* thin border around menu links */}
+
+#menu a:hover, #menu a:active {color:#EFF6D8; /* hover link color */}
+
+/* Logo Layout */
+#logo {top:10px; left: 15px; z-index:50;}
+#logo img {border: none;}
+
+/* Flash Layout */
+#fcontainer {position:absolute; top:405px; left:50px; width:125px; text-align: center; line-height:25px; font-size:.75em; border:none;}
+#fcontainer a {color:#fff; /* text color above flash.swf */ text-decoration:none; font-weight:bold;}
+#fcontainer a:hover {color:#999; /* hover above flash.swf */}
+#flashcontent {position:absolute; top:430px; left:64px; width:100px; height:100px; z-index:50;}
+
+/* Main Layout */
+#text {margin:0; padding:10px; width:80%;}
+
+.right {text-align:right;}
+.left {text-align:left;}
+
+img {border: none;}
+#norm {
+	color:#fff; /* color of text in body */
+	text-decoration:none;}
+
+.clear {clear:both;}
+
+h1,h2,h3,h4,h5,b {font-weight:bold; color:#fff;}
+
+h1 {font-size:1.3em;}
+h2 {font-size:1.2em;}
+h3 {font-size:1.1em;}
+h4 {font-size:1em;}
+h5 {font-size:.85em;}
+
+.smaller {font-size:.70em;}
+.smallest {font-size:.65em;}
+.copyright {text-align:center; font-size:.65em;}
+
+/* LINKS */
+a:link {color:#fff;}
+a:visited {color:#EFF6D8;}
+
+/* IMAGES */
+.left {padding-right:.75em; float:left;}
+.right {padding-left:.75em; float:right;}
+.left, .right {clear:both;}
+
+.p100, .p125, .p150, .p175, .p200, .p225, .p250, .p270, .p290, .p310 {float:left; margin:0 .75em 0 0;}
+.p100 {width:100px;}
+.p125 {width:125px;}
+.p150 {width:150px;}
+.p175 {width:175px;}
+.p200 {width:200px;}
+.p225 {width:225px;}
+.p250 {width:250px;}
+.p290 {width:285px;}
+.p270 {width:280px; height:250px;}
+.p310 {width:330px;}
+.p175r {width:175px; float:right; margin:0 0 0 .75em;}
+/* Misc */
+.nobull {list-style:none; margin:0; padding:0;}
+#validation {position:absolute; top:5px; right:10px;}
+#validation a {color:#fff; text-decoration:none;}
+#validation a:hover {color:#EFF6D8;}
+
+span.nonie {display:inline;}

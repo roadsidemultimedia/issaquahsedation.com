@@ -1,0 +1,145 @@
+<html>
+  <head>
+    <script language="javascript" type="text/javascript" src="http://api.map24.com/ajax/1.2/?init=default"></script>
+    <script language="javascript" src="http://api.map24.com/ajax/1.2/?package=simple"></script>
+    <script language="javascript" type="text/javascript" >
+      var map = null;
+ 
+      function goMap24() {
+  	
+  	map = Map24.Webservices.getMap24Application({
+  	  AppKey:"FJX1c7c7025fadb43ccdcb30f4fb8446X16",
+  	  MapArea:document.getElementById("maparea"),
+          Maptype: "JAVA",
+  	  MapWidth: 380,
+  	  MapHeight: 400
+		
+  	});
+	centerMapOnGivenCoordinate();
+	addMap24Label();
+      }
+
+      //----CENTER ON COORDINATE----
+
+      function centerMapOnGivenCoordinate(){
+        var mrcContainer = new Map24.Webservices.Request.MapletRemoteControl();
+        mrcContainer.push(
+          new Map24.Webservices.MRC.SetMapView({
+            Coordinates: new Map24.Coordinate( -7323.79548, 2852.736442 ),
+            ClippingWidth: new Map24.Webservices.ClippingWidth(
+              { MinimumWidth: 5000 }              
+            )
+          })
+        );
+        map.Webservices.sendRequest( mrcContainer );
+      }
+
+      //----ADDRESS LABEL----
+
+      function addMap24Label(){
+        var mrcContainer = new Map24.Webservices.Request.MapletRemoteControl( map );
+        mrcContainer.push(
+          new Map24.Webservices.MRC.DeclareMap24Label({
+            Anchor: "CENTER",
+            Coordinate: new Map24.Coordinate( -7323.79548, 2852.736442 ),
+            Color: new Map24.Color( { R:255, G:255, B:255, A:255 } ),
+            BgColor: new Map24.Color( { R:108, G:22, B:22, A:255 } ),
+            BorderColor: new Map24.Color( { R:34, G:34, B:34, A:255 } ),
+            MapObjectID: "myLabel",
+            Text: "Issaquah Valley Dental Care"
+          })
+        );
+        mrcContainer.push(
+          new Map24.Webservices.MRC.ControlMapObject({
+            Control: "ENABLE",
+            MapObjectIDs: "myLabel"
+          })
+        );
+        map.Webservices.sendRequest( mrcContainer );
+      }
+
+     //----ROUTING-----
+
+      var currentRouteID = "";
+ 
+      function startRouting( start, dest ){
+        M24.calculateRouteAddr({
+          start: start,
+          destination: dest,
+          showRoute: true,
+          onRoute: onRoute,
+          language: "EN_GB"
+        });
+      }
+      function startRoutingShortest( start, dest ){
+        M24.calculateRouteAddr({
+          start: start,
+          destination: dest,
+          showRoute: true,
+          onRoute: onRoute,
+          language: "EN_GB",
+          mode: "Shortest"
+        });
+      }
+ 
+      function onRoute( routeRes ){
+        if(currentRouteID != '' && currentRouteID != 'undefined')
+          removeRoute( currentRouteID );
+        currentRouteID = routeRes.Info.RouteID;
+        //Print the route description in a table
+        var res= new String("");
+        res += "<table border='1'>";
+        res += "<tr><td colspan='3'><font color='#FFFFFF'>Total Time: "+routeRes.TotalTime+"</font></td></tr>";
+        res += "<tr><td colspan='3'><font color='#FFFFFF'>Total Distance: "+routeRes.TotalLength+" "+routeRes.TotalLengthUnit+"</font></td></tr>";
+ 
+        for( var i=0; i < routeRes.RouteSegments.length;i++){
+          var segment = routeRes.RouteSegments[i];
+          res += "<tr><td><font color='#FFFFFF'>"+segment.Direction+" </font></td><td><font color='#FFFFFF'>"+segment.Description+"</font></td>";
+          res += "<td><font color='#FFFFFF'>"+segment.CurrentTime+"<br/>"+ segment.CurrentLength+" "+segment.CurrentLengthUnit+"</font></td>"
+          res += "</tr>";
+        }
+        res += "</table>";
+ 
+        var resDiv = document.getElementById("resultDiv");
+        resDiv.innerHTML = res;
+      }
+
+    </script>
+  </head>
+ 
+  <body onload="goMap24()" background="bg.gif">
+	<div style="font-family:arial;font-size:12;color:#ffffff">
+  <table>
+    <tr>
+	  <td>
+	    <table width="200" height="400" cellpadding="0" cellspacing="0" border="0" bordercolordark="#6C1616">
+		  <tr>
+		  <td valign="top" width="200">
+			  <input type='hidden' name='dest_address' id='dest_address' size='25' value='1660 NW Gilman Blvd, Issaquah, WA 98027'>
+			  <div style="font-family:arial;font-size:12;color:#ffffff">
+			  Get directions to our office here!
+			  <br/><br/>
+			  Your Starting Address:</div>
+			  <input type='text' name='start_address' id='start_address' size='30' value=''>
+            <a href='javascript:startRouting(document.getElementById("start_address").value,
+             document.getElementById("dest_address").value);'><img border="0" src="get.png"></a> 
+          </td>
+		  </tr>
+		  <tr>
+		    <td valign="bottom" width="200"><img src="logo.gif"></td>
+		  </tr>
+		</table>
+	  </td>
+	  <td valign="top">
+			<div id="maparea"></div>
+	  </td>
+	</tr>
+  </table>
+	<br/>
+  <table width="600">
+    <tr>
+	  <td><div id="resultDiv"></td>
+	</tr>
+  </table>
+  </body>
+</html>
